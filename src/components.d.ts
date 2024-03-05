@@ -6,24 +6,84 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
+    interface XzalabaijAmbulanceWlApp {
+        "basePath": string;
+    }
+    interface XzalabaijAmbulanceWlEditor {
+        "entryId": string;
+    }
     interface XzalabaijAmbulanceWlList {
     }
 }
+export interface XzalabaijAmbulanceWlEditorCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLXzalabaijAmbulanceWlEditorElement;
+}
+export interface XzalabaijAmbulanceWlListCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLXzalabaijAmbulanceWlListElement;
+}
 declare global {
+    interface HTMLXzalabaijAmbulanceWlAppElement extends Components.XzalabaijAmbulanceWlApp, HTMLStencilElement {
+    }
+    var HTMLXzalabaijAmbulanceWlAppElement: {
+        prototype: HTMLXzalabaijAmbulanceWlAppElement;
+        new (): HTMLXzalabaijAmbulanceWlAppElement;
+    };
+    interface HTMLXzalabaijAmbulanceWlEditorElementEventMap {
+        "editor-closed": string;
+    }
+    interface HTMLXzalabaijAmbulanceWlEditorElement extends Components.XzalabaijAmbulanceWlEditor, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLXzalabaijAmbulanceWlEditorElementEventMap>(type: K, listener: (this: HTMLXzalabaijAmbulanceWlEditorElement, ev: XzalabaijAmbulanceWlEditorCustomEvent<HTMLXzalabaijAmbulanceWlEditorElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLXzalabaijAmbulanceWlEditorElementEventMap>(type: K, listener: (this: HTMLXzalabaijAmbulanceWlEditorElement, ev: XzalabaijAmbulanceWlEditorCustomEvent<HTMLXzalabaijAmbulanceWlEditorElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
+    }
+    var HTMLXzalabaijAmbulanceWlEditorElement: {
+        prototype: HTMLXzalabaijAmbulanceWlEditorElement;
+        new (): HTMLXzalabaijAmbulanceWlEditorElement;
+    };
+    interface HTMLXzalabaijAmbulanceWlListElementEventMap {
+        "entry-clicked": string;
+    }
     interface HTMLXzalabaijAmbulanceWlListElement extends Components.XzalabaijAmbulanceWlList, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLXzalabaijAmbulanceWlListElementEventMap>(type: K, listener: (this: HTMLXzalabaijAmbulanceWlListElement, ev: XzalabaijAmbulanceWlListCustomEvent<HTMLXzalabaijAmbulanceWlListElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLXzalabaijAmbulanceWlListElementEventMap>(type: K, listener: (this: HTMLXzalabaijAmbulanceWlListElement, ev: XzalabaijAmbulanceWlListCustomEvent<HTMLXzalabaijAmbulanceWlListElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
     var HTMLXzalabaijAmbulanceWlListElement: {
         prototype: HTMLXzalabaijAmbulanceWlListElement;
         new (): HTMLXzalabaijAmbulanceWlListElement;
     };
     interface HTMLElementTagNameMap {
+        "xzalabaij-ambulance-wl-app": HTMLXzalabaijAmbulanceWlAppElement;
+        "xzalabaij-ambulance-wl-editor": HTMLXzalabaijAmbulanceWlEditorElement;
         "xzalabaij-ambulance-wl-list": HTMLXzalabaijAmbulanceWlListElement;
     }
 }
 declare namespace LocalJSX {
+    interface XzalabaijAmbulanceWlApp {
+        "basePath"?: string;
+    }
+    interface XzalabaijAmbulanceWlEditor {
+        "entryId"?: string;
+        "onEditor-closed"?: (event: XzalabaijAmbulanceWlEditorCustomEvent<string>) => void;
+    }
     interface XzalabaijAmbulanceWlList {
+        "onEntry-clicked"?: (event: XzalabaijAmbulanceWlListCustomEvent<string>) => void;
     }
     interface IntrinsicElements {
+        "xzalabaij-ambulance-wl-app": XzalabaijAmbulanceWlApp;
+        "xzalabaij-ambulance-wl-editor": XzalabaijAmbulanceWlEditor;
         "xzalabaij-ambulance-wl-list": XzalabaijAmbulanceWlList;
     }
 }
@@ -31,6 +91,8 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            "xzalabaij-ambulance-wl-app": LocalJSX.XzalabaijAmbulanceWlApp & JSXBase.HTMLAttributes<HTMLXzalabaijAmbulanceWlAppElement>;
+            "xzalabaij-ambulance-wl-editor": LocalJSX.XzalabaijAmbulanceWlEditor & JSXBase.HTMLAttributes<HTMLXzalabaijAmbulanceWlEditorElement>;
             "xzalabaij-ambulance-wl-list": LocalJSX.XzalabaijAmbulanceWlList & JSXBase.HTMLAttributes<HTMLXzalabaijAmbulanceWlListElement>;
         }
     }
