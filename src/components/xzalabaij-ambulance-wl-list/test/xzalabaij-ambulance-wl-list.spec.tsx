@@ -46,7 +46,7 @@ describe('xzalabaij-ambulance-wl-list', () => {
     mock.onGet().networkError();
     const page = await newSpecPage({
       components: [XzalabaijAmbulanceWlList],  //
-      html: `<pfx-ambulance-wl-list ambulance-id="test-ambulance" api-base="http://test/api"></pfx-ambulance-wl-list>`,  //
+      html: `<xzalabaij-ambulance-wl-list ambulance-id="test-ambulance" api-base="http://test/api"></xzalabaij-ambulance-wl-list>`,  //
     });
 
     const wlList = page.rootInstance as XzalabaijAmbulanceWlList; //
