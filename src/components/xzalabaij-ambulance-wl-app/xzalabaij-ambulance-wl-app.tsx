@@ -56,6 +56,7 @@ export class XzalabaijAmbulanceWlApp {
       <Host>
         { element === "editor"
         ? <xzalabaij-ambulance-wl-editor entry-id={entryId}
+            ambulance-id={this.ambulanceId} api-base={this.apiBase}
             oneditor-closed={ () => navigate("./list")} >
           </xzalabaij-ambulance-wl-editor>
           
