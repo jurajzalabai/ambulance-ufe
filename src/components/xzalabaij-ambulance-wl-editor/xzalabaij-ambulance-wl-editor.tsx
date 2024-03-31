@@ -48,9 +48,11 @@ export class XzalabaijAmbulanceWlEditor {
           this.entry = response.data;
           this.isValid = true;
        } else {
+          console.log("nieco");
           this.errorMessage = `Cannot retrieve list of waiting patients: ${response.statusText}`
        }
     } catch (err: any) {
+       console.log("nieco");
        this.errorMessage = `Cannot retrieve list of waiting patients: ${err.message || "unknown"}`
     }
     return undefined;
